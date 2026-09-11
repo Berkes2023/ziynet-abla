@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ziynet Sevsal — Equine Veterinarian
 
-## Getting Started
+A marketing website built with Next.js (App Router) + TypeScript + Tailwind CSS. See [`DESIGN.md`](DESIGN.md) for the design system (colours, type, components).
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` — pages and routes (App Router)
+- `components/` — shared UI (header, mega menu, cards, contact form, etc.)
+- `content/` — all editable copy: `site.ts` (contact details/nav), `services.ts` (drives the mega menu + service pages), `experience.ts`, `blog.ts`
+- `lib/validations.ts` — the contact form's validation schema
+- `DESIGN.md` — the design system reference
 
-## Learn More
+**To edit site content (text, services, experience, articles), edit the files in `/content` — no component changes needed for most updates.**
 
-To learn more about Next.js, take a look at the following resources:
+## Before going live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A few things are intentionally left as placeholders or stubs for a fast first build — worth addressing before sharing this with real clients:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Photos.** `components/HeroGraphic.tsx` is an abstract placeholder standing in for a real photo. Add a professional headshot and any consented photos of clinical work, then swap them in on the homepage and About page.
+2. **Contact form delivery.** `app/api/contact/route.ts` currently validates a submission and logs it to the server console — it does **not** send an email or save it anywhere. Before this goes live, wire in an email provider (e.g. [Resend](https://resend.com) or SendGrid) or a simple database, or the form will silently go nowhere.
+3. **Phone number formatting.** The phone number in `content/site.ts` is entered as it appeared on the source CV (`00 75 6749 320`) — double-check this is the correct, dialable format before publishing.
+4. **Domain.** Once a custom domain is chosen, set the `NEXT_PUBLIC_SITE_URL` environment variable (used by `app/sitemap.ts` and `app/robots.ts`) to the real URL, e.g. `https://ziynetsevsal.com`.
+5. **Employment considerations.** The site currently frames this as a personal professional site with a general contact form (not an advertised independent ambulatory practice). If it's meant to actively solicit paying client work, it's worth confirming that doesn't conflict with the terms of any current employment.
 
-## Deploy on Vercel
+## Deploying to Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repo is ready to deploy as-is. From this folder, run:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install -g vercel   # if you don't already have the CLI
+vercel login            # opens your browser to sign in / create an account
+vercel link             # links this folder to a new or existing Vercel project
+vercel deploy           # builds and deploys a shareable PREVIEW url
+```
+
+Once you're happy with the preview, ship it to production:
+
+```bash
+vercel deploy --prod
+```
+
+Vercel will print the live URL after each deploy — that's what you share with the client. Every subsequent `vercel deploy` (or a `git push` if you connect a GitHub repo in the Vercel dashboard) creates a new preview automatically.
+
+### Optional: connect GitHub for automatic deploys
+
+In the [Vercel dashboard](https://vercel.com/dashboard), open the project → Settings → Git, and connect it to a GitHub repository. After that, every push gets its own preview URL, and pushes to `main` deploy to production automatically.
