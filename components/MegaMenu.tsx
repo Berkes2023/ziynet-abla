@@ -103,7 +103,7 @@ export function MegaMenu() {
                   Talk through your horse&apos;s care
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-forest-100/80">
-                  Based in {site.location}, covering {site.serviceArea}.
+                  Based in {site.location}.
                 </p>
               </div>
               <Link

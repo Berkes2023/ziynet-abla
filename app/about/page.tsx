@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
@@ -27,7 +28,7 @@ export default function AboutPage() {
           <SectionHeading eyebrow="About" title={`Hi, I'm ${site.name}`} />
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-forest-900/80">
             <p>
-              I&apos;m an equine veterinarian based in Manchester, currently
+              I&apos;m an equine veterinarian based in Cyprus, currently
               working full-time in ambulatory and field practice. After
               starting my veterinary education at the University of Surrey, I
               transferred to Ankara University Faculty of Veterinary
@@ -44,18 +45,28 @@ export default function AboutPage() {
             </p>
             <p>
               Alongside my current role, I&apos;ve completed clinical
-              placements with racehorses in Istanbul, at the Equine Clinic of
-              the University of Teramo in Italy, and across several equine
-              and mixed practices in Cyprus — experience that shaped a broad,
-              hands-on approach to equine medicine, from internal medicine
-              and dentistry to diagnostic imaging, reproduction, endoscopy
-              and surgery.
+              placements with racehorses in Istanbul, Veliefendi Racecourse,
+              at the Equine Clinic of the University of Teramo in Italy, and
+              across several equine and mixed practices in Cyprus —
+              experience that shaped a broad, hands-on approach to equine
+              medicine, from internal medicine and dentistry to diagnostic
+              imaging, reproduction, endoscopy and surgery.
             </p>
             <p>
               My goal is simple: to keep developing my clinical expertise
               while providing calm, compassionate, high-quality care — for
               the horse in front of me, and the owner who loves them.
             </p>
+          </div>
+
+          <div className="relative mt-10 aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+            <Image
+              src="/images/about-brown-horse.jpg"
+              alt={`${site.name} with a horse in her care`}
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 48rem, 100vw"
+            />
           </div>
         </Container>
       </section>

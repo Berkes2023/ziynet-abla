@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown, X } from "lucide-react";
 import { primaryNav } from "@/content/site";
 import { services } from "@/content/services";
@@ -9,7 +10,7 @@ import { services } from "@/content/services";
 export function MobileNav({ onClose }: { onClose: () => void }) {
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 lg:hidden">
       <div
         className="absolute inset-0 bg-forest-900/40"
@@ -91,6 +92,7 @@ export function MobileNav({ onClose }: { onClose: () => void }) {
           Get in Touch
         </Link>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

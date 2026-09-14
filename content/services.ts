@@ -14,6 +14,7 @@ export type Service = {
   teaser: string;
   intro: string;
   bullets: string[];
+  image?: string;
 };
 
 export const services: Service[] = [
@@ -26,10 +27,11 @@ export const services: Service[] = [
       "A methodical approach to lameness — from initial history and trot-up through to flexion tests, nerve blocks and imaging — so treatment is based on a clear diagnosis, not guesswork.",
     bullets: [
       "Full lameness investigations and orthopaedic examinations",
-      "Foot abscess, keratoma and canker diagnosis & treatment",
+      "Fracture diagnosis and management",
+      "Foot abscess, keratoma, thrush and canker diagnosis & treatment",
       "Laminitis diagnosis, treatment and ongoing management",
       "Extracorporeal shock wave therapy",
-      "Soft tissue injury assessment and rehabilitation planning",
+      "Soft tissue injury assessment, treatment and rehabilitation planning",
     ],
   },
   {
@@ -44,8 +46,10 @@ export const services: Service[] = [
       "Diagnostic ultrasound scanning (USG)",
       "Gastroscopy for gastric ulcer diagnosis and monitoring",
       "Endoscopy and guttural pouch wash",
-      "Result interpretation explained in plain language",
+      "Kissing spine diagnosis and management",
+      "Result interpretation and treatment planning",
     ],
+    image: "/images/service-diagnostic-imaging.jpg",
   },
   {
     slug: "medicine-dentistry",
@@ -62,6 +66,7 @@ export const services: Service[] = [
       "Routine and advanced dentistry",
       "Ophthalmology: corneal ulcers, uveitis, conjunctivitis",
     ],
+    image: "/images/service-medicine-dentistry.jpg",
   },
   {
     slug: "reproduction-foaling",
@@ -76,6 +81,7 @@ export const services: Service[] = [
       "Postpartum care for mare and foal",
       "Breeding soundness advice",
     ],
+    image: "/images/service-reproduction-foaling.jpg",
   },
   {
     slug: "surgery-sedation",
@@ -86,6 +92,7 @@ export const services: Service[] = [
       "Surgical and sedation procedures carried out with careful attention to pre- and post-operative care, from routine castration to wound management.",
     bullets: [
       "Castration under general anaesthesia or standing sedation",
+      "Enucleation (surgical eye removal)",
       "Wound management, suturing and bandaging",
       "Sedation for clipping, farriery or minor procedures",
       "Anaesthesia induction, monitoring and recovery",
@@ -99,10 +106,14 @@ export const services: Service[] = [
     intro:
       "Emergencies are stressful enough without delay — ambulatory visits mean your horse is assessed and treated in a familiar environment, as quickly as possible.",
     bullets: [
-      "Colic, choke and acute abdominal cases",
-      "Laminitis and grass sickness",
-      "Wounds, septic shock and toxic-plant intoxications",
-      "Infectious disease management: strangles, EHV, influenza",
+      "Colic and equine grass sickness",
+      "Eye",
+      "Choke",
+      "Laminitis, nonweight bearing lameness",
+      "Wounds and septic joint",
+      "Fever",
+      "Shock, endotoxemia, intoxication",
+      "Infectious disease management and outbreaks",
       "Biosecurity guidance and quarantine planning",
     ],
   },
@@ -118,8 +129,9 @@ export const services: Service[] = [
       "Vaccination programmes",
       "Faecal worm egg counts and tailored deworming protocols",
       "Routine health checks",
-      "Microchipping and ID verification",
+      "Microchipping and ID sketch",
     ],
+    image: "/images/service-routine-health.jpg",
   },
 ];
 
