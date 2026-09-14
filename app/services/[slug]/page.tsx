@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check } from "lucide-react";
@@ -56,6 +57,17 @@ export default async function ServiceDetailPage({
           <p className="mt-6 text-lg leading-relaxed text-forest-900/70">
             {service.intro}
           </p>
+          {service.image ? (
+            <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 48rem, 100vw"
+              />
+            </div>
+          ) : null}
         </Container>
       </section>
 

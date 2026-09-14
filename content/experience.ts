@@ -14,7 +14,7 @@ export const workHistory: TimelineEntry[] = [
     location: "Manchester, UK",
     points: [
       "Full-time ambulatory and field practice, with clinical work for referred cases",
-      "Lameness, diagnostic imaging, dentistry, reproduction, endoscopy and gastroscopy",
+      "Emergencies, lameness, diagnostic imaging, dermatology, ophthalmology, dentistry, endoscopy, gastroscopy, routine, reproduction",
       "Weekly on-call night shifts and rotating 48-hour weekend cover",
     ],
   },
@@ -84,4 +84,5 @@ export const continuingEducation: string[] = [
   "University of Liverpool Equine Referral Evening (2025)",
   "Equine Medicine Masterclass — respiratory, cardiac & liver disease (2024)",
   "International Equine Science Congress, Ankara — Congress Organiser (2020 & 2022)",
+  "BEVA Congress (2026)",
 ];

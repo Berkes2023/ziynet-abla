@@ -4,7 +4,7 @@ A reference for the visual language of this site, so it can be extended consiste
 
 ## Brand
 
-**Ziynet Sevsal — Equine Veterinarian**, based in Manchester, serving the North West of England. The tone is *authoritative but warm*: clinically credible without feeling cold or corporate — closer to a trusted local expert than a faceless clinic chain. This mirrors the inspiration site ([hirdandpartners.com/equine](https://www.hirdandpartners.com/equine/)): clean layouts, card-based service presentation, and prominent contact information, adapted here for a solo equine practitioner.
+**Ziynet Sevsal — Equine Veterinarian**, based in Cyprus. The tone is *authoritative but warm*: clinically credible without feeling cold or corporate — closer to a trusted local expert than a faceless clinic chain. This mirrors the inspiration site ([hirdandpartners.com/equine](https://www.hirdandpartners.com/equine/)): clean layouts, card-based service presentation, and prominent contact information, adapted here for a solo equine practitioner.
 
 ## Colour Palette
 
@@ -34,7 +34,7 @@ All shared UI lives in `/components`:
 - **`ServiceCard.tsx`, `BlogCard.tsx`** — content cards used across the homepage, services, and blog listings.
 - **`SectionHeading.tsx`** — consistent eyebrow/title/description pattern used at the top of every section.
 - **`CTASection.tsx`** — the repeated, full-width conversion banner used at the bottom of most pages.
-- **`HeroGraphic.tsx`** — an abstract SVG motif (dot pattern + horseshoe outline) used in place of stock photography. **Swap this for a real professional photo of Ziynet once available** — it's the single highest-impact upgrade to make before this goes live for real visitors.
+- **`HeroGraphic.tsx`** — the homepage hero photo of Ziynet with a horse, with a gradient caption overlay.
 
 ## Content
 
@@ -49,4 +49,4 @@ Editing these files updates the site without touching any component or page.
 
 ## Imagery
 
-No stock or placeholder photography of people is used — it would misrepresent who's actually providing the care. Sections that would normally hold a photo (the hero, the about page) currently use tasteful abstract graphics instead. Replace `HeroGraphic.tsx` and add real photos (a professional headshot, and any consented images of clinical work) as they become available.
+Real photos of Ziynet and her patients are used throughout (hero, about page, and several service pages), stored in `public/images/`. No stock photography is used — it would misrepresent who's actually providing the care. The Surgery & Sedation service page doesn't have a photo yet; add one to `public/images/` and reference it via that service's `image` field in `content/services.ts` when available.
