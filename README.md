@@ -25,10 +25,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 A few things are intentionally left as placeholders or stubs for a fast first build — worth addressing before sharing this with real clients:
 
-1. **One missing photo.** Every service page has a photo except **Surgery & Sedation** — add one to `public/images/` and reference it via that service's `image` field in `content/services.ts`.
-2. **Contact form delivery.** `app/api/contact/route.ts` currently validates a submission and logs it to the server console — it does **not** send an email or save it anywhere. Before this goes live, wire in an email provider (e.g. [Resend](https://resend.com) or SendGrid) or a simple database, or the form will silently go nowhere.
-3. **Domain.** Once a custom domain is chosen, set the `NEXT_PUBLIC_SITE_URL` environment variable (used by `app/sitemap.ts` and `app/robots.ts`) to the real URL, e.g. `https://ziynetsevsal.com`.
-4. **Employment considerations.** The site currently frames this as a personal professional site with a general contact form (not an advertised independent ambulatory practice). If it's meant to actively solicit paying client work, it's worth confirming that doesn't conflict with the terms of any current employment.
+1. **Contact form delivery.** `app/api/contact/route.ts` currently validates a submission and logs it to the server console — it does **not** send an email or save it anywhere. Before this goes live, wire in an email provider (e.g. [Resend](https://resend.com) or SendGrid) or a simple database, or the form will silently go nowhere.
+2. **Domain.** Once a custom domain is chosen, set the `NEXT_PUBLIC_SITE_URL` environment variable (used by `app/sitemap.ts` and `app/robots.ts`) to the real URL, e.g. `https://ziynetsevsal.com`.
+3. **Employment considerations.** The site currently frames this as a personal professional site with a general contact form (not an advertised independent ambulatory practice). If it's meant to actively solicit paying client work, it's worth confirming that doesn't conflict with the terms of any current employment.
 
 ## Deploying to Vercel
 

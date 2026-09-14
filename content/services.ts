@@ -97,6 +97,7 @@ export const services: Service[] = [
       "Sedation for clipping, farriery or minor procedures",
       "Anaesthesia induction, monitoring and recovery",
     ],
+    image: "/images/service-surgery-sedation.jpg",
   },
   {
     slug: "emergency-ambulatory",

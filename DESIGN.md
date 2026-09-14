@@ -49,4 +49,4 @@ Editing these files updates the site without touching any component or page.
 
 ## Imagery
 
-Real photos of Ziynet and her patients are used throughout (hero, about page, and several service pages), stored in `public/images/`. No stock photography is used — it would misrepresent who's actually providing the care. The Surgery & Sedation service page doesn't have a photo yet; add one to `public/images/` and reference it via that service's `image` field in `content/services.ts` when available.
+Real photos of Ziynet and her patients are used throughout (hero, about page, and every service page), stored in `public/images/`. No stock photography is used — it would misrepresent who's actually providing the care.
