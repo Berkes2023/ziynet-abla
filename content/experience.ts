@@ -79,10 +79,10 @@ export const education = [
 ];
 
 export const continuingEducation: string[] = [
-  "BEVA Congress (2025)",
+  "BEVA Congress (2026)",
   "BOVA & Nextmune Equine Roadshow (2025)",
+  "BEVA Congress (2025)",
   "University of Liverpool Equine Referral Evening (2025)",
   "Equine Medicine Masterclass — respiratory, cardiac & liver disease (2024)",
   "International Equine Science Congress, Ankara — Congress Organiser (2020 & 2022)",
-  "BEVA Congress (2026)",
 ];
