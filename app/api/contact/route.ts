@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/validations";
 
+const FORMSPREE_ENDPOINT =
+  process.env.FORMSPREE_ENDPOINT ?? "https://formspree.io/f/mzezvjzp";
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const parsed = contactSchema.safeParse(body);
@@ -12,10 +15,34 @@ export async function POST(request: Request) {
     );
   }
 
-  // NOTE: this does not send an email or persist data yet.
-  // Wire up a provider (e.g. Resend, SendGrid) here before launch —
-  // see the "Before going live" section in README.md.
-  console.log("New contact enquiry:", parsed.data);
+  const { ownerName, horseName, service, email, phone, message } =
+    parsed.data;
+
+  const formspreeResponse = await fetch(FORMSPREE_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: ownerName,
+      horseName,
+      service,
+      email,
+      phone,
+      message,
+      _subject: `New enquiry from ${ownerName} (${service})`,
+    }),
+  });
+
+  if (!formspreeResponse.ok) {
+    console.error(
+      "Formspree submission failed:",
+      formspreeResponse.status,
+      await formspreeResponse.text().catch(() => "")
+    );
+    return NextResponse.json({ ok: false }, { status: 502 });
+  }
 
   return NextResponse.json({ ok: true });
 }
